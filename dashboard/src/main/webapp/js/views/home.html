@@ -1,0 +1,183 @@
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+
+<label id="label-1"></label>
+         <div id="div1d" class="oj-flex oj-panel oj-panel-shadow-md   demo-panel-customizations oj-sm-flex-items-initial oj-sm-justify-content-center">
+            <div class="oj-flex oj-flex-items-pad demo-flex-display">
+           
+               <div class="oj-flex-bar-start">    
+                  <label for="from" class="oj-label-inline">From</label> 
+				  <input id="from" 
+                     data-bind="ojComponent: {component: 'ojInputDate', 
+                     datePicker: {
+                     numberOfMonths: 1
+                     },
+                     converter: dateConverter,
+                     keyboardEdit:'disabled',
+                     max: toValue,
+                     value: value}"/>
+               </div>
+               
+               <div class="oj-flex-bar-start">    
+                  <label for="to" class="oj-label-inline"> To</label> 
+				  <input id="to" 
+                     data-bind="ojComponent: {component: 'ojInputDate', 
+                     datePicker: {
+                     numberOfMonths: 1
+                     },
+                     converter: dateConverter,
+                     keyboardEdit:'disabled',
+                     min: value,
+                     value: toValue}"/>
+               </div>
+               <div id='buttons-container'>
+                  <input id="inputButton4" type="button"
+                     data-bind="click:GetGeoData ,
+                     ojComponent: {
+                     component: 'ojButton', 
+                     label: 'Get Data'}"/>
+               </div>
+            </div>
+         </div>
+		 
+ <div class="oj-flex ">
+ <div class=" oj-sm-flex-0 oj-flex-item ">
+      <div class="oj-flex oj-sm-flex-direction-column oj-panel oj-panel-shadow-md  demo-panel-customizations">
+		
+                       
+				<label id="h_all_fig" style="color:black;font-size: 17px;font-weight: bold;text-align: center;opacity: 0.7;white-space: nowrap; overflow: hidden;">Inter-Agency Operations </label>
+				   
+				<div class="oj-flex-item oj-panel oj-panel-shadow-md   demo-panel-customizations">
+					<img src="People-Reached.png" 
+						alt="bulleted list image" 
+						width="30px" height="30px"  title="People Reached"  style="margin-left: auto;	margin-right: auto;	display: block; "/> 
+					<figcaption id="fig2x" style="color:rgb(17,109,182);font-size: 7px;font-weight: bold;text-align: center">Net</figcaption>						
+					<figcaption id="fig2" style="color: rgb(17,109,182);font-size: 17px;font-weight: bold;text-align: center"></figcaption>
+					<figcaption id="fig1x" style="color: rgb(17,109,182);font-size: 7px;font-weight: bold;text-align: center">Cumulative</figcaption>
+					<figcaption id="fig1" style="color: rgba(17,109,182,0.3);font-size: 14px;font-weight: bold;text-align: center"></figcaption>
+											
+				</div>
+				<div class="oj-flex-item oj-panel oj-panel-shadow-md   demo-panel-customizations">
+					<img src="HTR.png" 
+							alt="bulleted list image" 
+							width="30px" height="30px"  title="HTR Areas"  style="margin-left: auto;	margin-right: auto;	display: block; "/>
+						<figcaption id="fig3x" style="color: rgb(17,109,182);font-size: 9px;font-weight: bold;text-align: center">HTR AREAS</figcaption>						
+						<figcaption id="fig3" style="color: rgb(17,109,182);font-size: 17px;font-weight: bold;text-align: center"></figcaption>						
+				</div>
+				<div class="oj-flex-item oj-panel oj-panel-shadow-md   demo-panel-customizations">
+					<img src="Besiged.png" 
+						alt="bulleted list image" 
+						width="30px" height="30px" title="Besieged"  style="margin-left: auto;	margin-right: auto;	display: block; "/>
+						
+							<figcaption id="fig4x" style="color: rgb(17,109,182);font-size: 9px;font-weight: bold;text-align: center">BESIEGED</figcaption>
+					<figcaption id="fig4" style="color: rgb(17,109,182);font-size: 17px;font-weight: bold;text-align: center"></figcaption>
+				</div>
+				<div class="oj-flex-item oj-panel oj-panel-shadow-md   demo-panel-customizations">
+					<img src="xl.png" 
+							alt="bulleted list image" 
+							width="30px" height="30px" title="Priority CROSS-LINE"  style="margin-left: auto;	margin-right: auto;	display: block; "/>
+					<figcaption id="fig5x" style="color: rgb(17,109,182);font-size: 9px;font-weight: bold;text-align: center">PRIORITY CROSS-LINE</figcaption>
+					<figcaption id="fig5" style="color: rgb(17,109,182);font-size: 17px;font-weight: bold;text-align: center"></figcaption>
+				</div>
+				
+				<div class="oj-flex-item oj-panel oj-panel-shadow-md   demo-panel-customizations">
+					<img src="Convoy.png" 
+						alt="bulleted list image" 
+						width="60px" height="30px" title="Convoys"  style="margin-left: auto;	margin-right: auto;	display: block; "/>
+				<figcaption id="fig6x" style="color: rgb(17,109,182);font-size: 9px;font-weight: bold;text-align: center">CONVOYS</figcaption>
+					<figcaption id="fig6" style="color: rgb(17,109,182);font-size: 17px;font-weight: bold;text-align: center"></figcaption>
+					</div>
+      </div> 
+      </div> 
+      <div class="oj-flex-item  demo-panel-customizations">
+
+         <div id='thematicmap1h'
+            data-bind="ojComponent:{
+            component: 'ojThematicMap',
+			animationOnDisplay: 'auto',
+            basemap: 'foo',
+            mapProvider: mapProviderh,
+            initialZooming:'auto', 
+            zooming: 'auto',
+			maxZoom:200,
+            panning: 'auto',
+			optionChange: mapOptionChangeh,
+            areaLayers:
+            [{
+            layer: 'countries',
+            areaDataLayer: {
+            id: 'adl1', 
+            areas: [{id: 'a1', 'location': 'SY15', color: 'rgba(238, 229, 220,0.9)' }]}
+            }
+            ],
+            pointDataLayers: [{id: 'pdl3', markers: citiesh}]
+            }"
+            style="width:100%; height:35.67em;">
+         </div>
+      </div>
+      </div>
+ 
+  
+    <div class="oj-flex oj-panel oj-panel-shadow-md   demo-panel-customizations oj-sm-flex-items-initial oj-sm-justify-content-center">  
+        
+        <div class="oj-flex-item">
+		 <label for="uname">User Name</label>
+          <input id="uname" 
+                 data-bind="ojComponent: {component: 'ojInputText', 
+                                           required: true}">
+        </div>
+         <div class="oj-flex-item">
+		<label  for="upassword">Password</label>
+          <input id="upassword" 
+                 data-bind="ojComponent: {component: 'ojInputPassword', required: true}">
+        </div>
+        <div class="oj-flex-item oj-sm-align-self-flex-end">
+        <input id="ButtonLogin" type="button"
+               data-bind="click:Getlogin ,
+                ojComponent: {
+                  component: 'ojButton', 
+                  label: 'Login'}"/>
+        </div>
+    </div>    
+   
+
+<div id="dialogWrapper">
+  <div style="display:none" id="modalDialog1" title="Error" 
+       data-bind="ojComponent:{component: 'ojDialog', initialVisibility: 'hide'}">
+     <div class="oj-dialog-body">
+       Unauthorized.
+     </div>
+     <div class="oj-dialog-footer">
+        <button id="okButton" data-bind="ojComponent: {component: 'ojButton', label: 'OK'}"> </button>
+      </div>
+  </div>
+  
+
+</div>
+
+<div id="dialogWrapper">
+  <div style="display:none" id="modalDialog17" title="Convoys Details" 
+       data-bind="ojComponent:{component: 'ojDialog', initialVisibility: 'hide',rootAttributes: { style: 'width:  670px; height: 470px;'}}">
+     <div class="oj-dialog-body">
+           
+         <table id="table" summary="Department List" aria-label="Departments Table"
+            data-bind="ojComponent: {component: 'ojTable',display: 'grid',  
+            columns: [
+					{headerText: 'Location', field: 'Location',style: 'width: 23%'},
+					{headerText: 'Convoy Type', field: 'Convoy_Type',style: 'width: 23%'},
+					{headerText: 'Convoy Date', field: 'Convoy_Date',style: 'width: 17%'},
+					{headerText: 'Access Status', field: 'Access_Status',style: 'width: 17%'},
+					{headerText: 'Total Reach', field: 'Total_Reach',style: 'width: 16%'}],
+                             rootAttributes: {'style':'height: 300px;'}}" style="width:100%; height:100%;"></table>
+       
+     </div>
+     <div class="oj-dialog-footer">
+        <button id="okButton17" data-bind="ojComponent: {component: 'ojButton', label: 'OK'}"> </button>
+      </div>
+  </div>
+  
+
+</div>

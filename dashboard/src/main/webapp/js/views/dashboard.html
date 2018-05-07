@@ -1,0 +1,63 @@
+<!--
+ Copyright (c) 2014, 2017, Oracle and/or its affiliates.
+ The Universal Permissive License (UPL), Version 1.0
+ -->
+<div class="oj-hybrid-padding">
+ <!-- <h3>Dashboard Content Area</h3>
+  <div>
+      To change the content of this section, you will make edits to the dashboard.html file located in the /js/views folder.
+  </div>-->
+  <div id='thematicmap-container'>
+  <div style="display:inline-block;line-height:32px;font-weight:bold;padding:0 8px">
+    Data Layer Selection
+  </div>
+  <!-- map selection toggle button -->
+  <div id="radioButtonset1" class="oj-buttonset-width-auto" aria-label="Choose only one setting." aria-controls="thematicmap1"
+      data-bind="ojComponent: {
+        component: 'ojButtonset',
+        checked: selectionValue}">
+      <!-- ko foreach: selectionOptions -->
+      <label data-bind="attr: {for: id}"></label>
+      <input type="radio" name="selection"
+             data-bind="value: value, attr: {id: id},
+             ojComponent: {component: 'ojButton', label: label}"/>
+      <!-- /ko -->
+  </div>
+  <div id='thematicmap1' data-bind="ojComponent:{
+      component: 'ojThematicMap',
+      basemap: 'usa',
+      zooming: 'auto',
+      panning: 'auto',
+      areaLayers: [{layer: 'states', labelDisplay: 'off',}],
+      pointDataLayers: [{
+        id: 'pdl1',
+        selectionMode: ko.toJS(selectionValue),
+        template: 'pie_template',
+        markers: salesBreakdownByCity}]
+      }"
+      style="width:100%; height:400px;">
+  </div>
+  <script type="text/html" id="pie_template">
+    <div data-bind="
+        ojComponent: {
+            component: 'ojChart',
+            type: 'pie',
+            selectionMode: 'none',
+            series: [
+              {name: city+': Shoes', items: [shoes]},
+              {name: city+': Shirts', items: [shirts]},
+              {name: city+': Pants', items: [pants]},
+              {name: city+': Dresses', items: [dresses]},
+            ],
+            styleDefaults: {
+               
+            },
+            legend: {
+                rendered: 'off'
+            },
+            rootAttributes:{id: location, style: pieSize}
+        }" >
+    </div>
+  </script>
+</div>
+</div>
